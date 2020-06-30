@@ -4,10 +4,8 @@ $IDvar = $_GET['id_product'];
 $sqlquery = "SELECT * FROM `produit` WHERE ID_PRD =  '$IDvar'";
 $Result = mysqli_query($con,$sqlquery);
 // print_r($Result);
-if (!$Result) {
-    printf("Error: %s\n", mysqli_error($con));
-    exit();
-}
+
+
 $row = mysqli_fetch_assoc($Result);
 
 if(isset($_POST['ID_PRD'])){
@@ -22,7 +20,7 @@ if(isset($_POST['ID_PRD'])){
     //     printf("Error: %s\n", mysqli_error($con));
     //     exit();
     // }
-    print_r($products);
+    // print_r($products);
     $_SESSION['Product'.$ID_PRD] = array(
         'id' => $products['ID_PRD'], 
         'NOM' => $products['NOM'],
@@ -41,6 +39,8 @@ if(isset($_POST['ID_PRD'])){
     <img src="img/<?php echo$row['IMAGE'] ?>" alt="" style="width: 200px; height:300px">
     <p><?php echo $row['NOM'] ?></p>
     <p><?php echo $row['PRICE'] ?></p>
+    <p>Quantité disponible : <?php echo $row['QTE'] ?></p>
+
    
 <form method="POST" >
 Quantity:
