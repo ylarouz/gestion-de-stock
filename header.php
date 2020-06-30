@@ -7,6 +7,7 @@ include('function.php');
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="header+footer.css">
@@ -17,6 +18,12 @@ include('function.php');
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="../js/header+footer.js"></script>
+    <style>
+    a{
+        color : black;
+        margin-left : 45px;
+    }
+     </style>
     <title>Document</title>
 </head>
 
@@ -26,8 +33,9 @@ include('function.php');
             <img id="logo" src="img/logo.png" alt="">
             <div id="HeaderWithoutLogo">
                 <div id="Rayons">
-                    <img id="search" src="img/bars.png" alt="">
-                    <p>Rayons</p>
+               
+                    <!-- <img id="search" src="img/bars.png" alt=""> -->
+                    <!-- <p>Rayons</p> -->
                 </div>
                 <div id="Recherche">
                     <input type="text" placeholder="Lait,oeufs,coca.....">
@@ -40,12 +48,15 @@ include('function.php');
                 </div>
                 <div id="Moncompte">
                     <img id="profil" src="img/profil.png" alt="">
-                    <?php if($_SESSION['log']=true && $_SESSION['log']):?>
-                    <p><?php echo $_SESSION['nom'] ?></p>
-                    <?php else: ?>
+                   
+                   
                     <p>Mon Compte</p>
-                    <?php endif; ?>
+              
                 </div>
+                <a href="user.php">home</a>
+                <a href="inscription.php">inscription</a>
+                <a href="admin.php">control</a>
+                
                 <div id="Panier">
                     <button id="BtnPanier">
                         <img src="img/panier.png" alt="" id="imgpanier">
